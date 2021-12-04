@@ -9,7 +9,16 @@ const typeDefs = gql`
     savedBooks: [Book]
   }
 
-  // TODO: add a data type for Book
+  type Book {
+    _id: ID!
+    authors: [string]
+    # authors: String
+    description: String!
+    bookId: String!
+    image: String!
+    link: String
+    title: String!
+  }
 
   type Auth {
     token: ID!
@@ -30,7 +39,7 @@ const typeDefs = gql`
   }
 
   type Mutation {
-    // TODO: add a mutation for login ##
+    login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
     saveBook(bookData: BookInput!): User
     removeBook(bookId: ID!): User
