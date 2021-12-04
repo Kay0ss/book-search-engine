@@ -16,7 +16,7 @@ import Auth from '../utils/auth';
 
 const SavedBooks = () => {
   // TODO: Call the QUERY_ME query and destructure the loading and data response properties
-  const { loading, data } = useQuery(GET_ME, {
+  const { loading, error, data } = useQuery(GET_ME, {
     fetchPolicy: 'network-only'
   });
 
